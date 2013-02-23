@@ -144,7 +144,7 @@ display_versions_with_selected() {
     local version=${dir##*/}
     local config=`test -f $dir/.config && cat $dir/.config`
     if test "$version" = "$selected"; then
-      printf "  \033[36mο\033[0m $version \033[90m$config\033[0m\n"
+      printf "  \033[36mo\033[0m $version \033[90m$config\033[0m\n"
     else
       printf "    \033[90m$version $config\033[0m\n"
     fi
