@@ -169,28 +169,28 @@ list_versions_installed() {
 #
 
 display_versions() {
-  clear
+  # clear
   check_current_version
   display_versions_with_selected $active
 
-  while true; do
-    read -s -n 3 c
-    case "$c" in
-      $UP)
-        clear
-        display_versions_with_selected $(prev_version_installed)
-        ;;
-      $DOWN)
-        clear
-        display_versions_with_selected $(next_version_installed)
-        ;;
-      *)
-        clear
-        activate $selected
-        exit
-        ;;
-    esac
-  done
+  # while true; do
+  #   read -s -n 3 c
+  #   case "$c" in
+  #     $UP)
+  #       clear
+  #       display_versions_with_selected $(prev_version_installed)
+  #       ;;
+  #     $DOWN)
+  #       clear
+  #       display_versions_with_selected $(next_version_installed)
+  #       ;;
+  #     *)
+  #       clear
+  #       activate $selected
+  #       exit
+  #       ;;
+  #   esac
+  # done
 }
 
 #
@@ -377,7 +377,7 @@ display_remote_versions() {
   echo
   for v in $versions; do
     if test "$active" = "$v"; then
-      printf "  \033[36mο\033[0m $v \033[0m\n"
+      printf "  \033[36mo\033[0m $v \033[0m\n"
     else
       if test -d $VERSIONS_DIR/$v; then
         printf "    $v \033[0m\n"
